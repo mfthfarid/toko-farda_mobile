@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:toko_farda_mobile/drawer.dart';
+import 'package:toko_farda_mobile/profil/alamat.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
@@ -34,7 +36,14 @@ class _MyHomePageState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // body: (DataPelanggan()),
-        );
+      drawer: MyDrawer(),
+      // body: Container(
+      //   color: Colors.blue,
+      // ),
+      appBar: AppBar(
+        title: Text("Toko Farda Mobile"),
+      ),
+      body: (ProfilPage()),
+    );
   }
 }
