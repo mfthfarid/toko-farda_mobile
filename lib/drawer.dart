@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toko_farda_mobile/profil/map.dart';
 // import 'package:kaspin/login/login.dart'; // Belum perlu logout
 
 class MyDrawer extends StatefulWidget {
@@ -57,6 +58,15 @@ class _MyDrawerState extends State<MyDrawer> {
             const Divider(color: Colors.white54),
 
             // ===================== MENU ITEM ====================
+            ListTile(
+              leading: const Icon(Icons.account_box, color: Colors.white),
+              title:
+                  const Text("Profil", style: TextStyle(color: Colors.white)),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => InputLokasiPage()));
+              },
+            ),
             ListTile(
               selected: selectedIndex == 1,
               leading: const Icon(Icons.money_rounded, color: Colors.white),
